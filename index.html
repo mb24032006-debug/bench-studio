@@ -26,9 +26,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link rel="preload" as="image"
-      href="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format"
-      imagesrcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format 600w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
-      imagesizes="(max-width:1024px) 90vw, 560px"
+      href="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&q=70&fm=webp&auto=format"
+      imagesrcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&q=70&fm=webp&auto=format 480w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=72&fm=webp&auto=format 800w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
+      imagesizes="(max-width:480px) 92vw, (max-width:1024px) 80vw, 560px"
       fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"></noscript>
@@ -922,10 +922,10 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
   font-size:14px;color:rgba(255,255,255,0.85);
   transition:color var(--transition-base);
 }
-.footer__contact a:hover{color:var(--color-accent)}
+.footer__contact a:hover{color:var(--color-accent-light)}
 .footer__col h3{
   font-size:12px;font-weight:700;letter-spacing:2px;
-  text-transform:uppercase;color:var(--color-accent);
+  text-transform:uppercase;color:var(--color-accent-light);
   margin-bottom:var(--space-md);font-family:var(--font-body);
 }
 .footer__col ul{display:flex;flex-direction:column;gap:8px}
@@ -955,6 +955,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
    RESPONSIVE
    ============================================================ */
 @media(max-width:1024px){
+  .hero::before{display:none}
+  .browser-mockup{transform:none;animation:none;will-change:auto}
   .hero > .container{grid-template-columns:1fr;gap:var(--space-2xl)}
   .hero__visual{order:-1;max-width:480px;margin:0 auto}
   .approach-grid,
@@ -1125,9 +1127,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
           <div class="browser-mockup__url">benchstudio.netlify.app</div>
         </div>
         <div class="browser-mockup__content">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format"
-               srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format 600w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
-               sizes="(max-width:1024px) 90vw, 560px"
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&q=70&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&q=70&fm=webp&auto=format 480w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=72&fm=webp&auto=format 800w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
+               sizes="(max-width:480px) 92vw, (max-width:1024px) 80vw, 560px"
                alt="" width="1200" height="750"
                fetchpriority="high" decoding="async">
         </div>
@@ -1266,7 +1268,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
                alt="Le Marrakchi — Demo restaurant marocain"
                width="1200" height="750" loading="lazy" decoding="async">
           <div class="realisation-card__overlay">
-            <a href="/lemarrakchi/index.html" target="_blank" rel="noopener" class="btn btn--white">
+            <a href="/lemarrakchi/index.html" target="_blank" rel="noopener" class="btn btn--white" aria-label="Voir la démo Le Marrakchi (restaurant)">
               Voir le démo <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -1292,7 +1294,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
                alt="Atlas Immobilier — Demo agence immobilière"
                width="1200" height="750" loading="lazy" decoding="async">
           <div class="realisation-card__overlay">
-            <a href="/atlas-immobilier/index.html" target="_blank" rel="noopener" class="btn btn--white">
+            <a href="/atlas-immobilier/index.html" target="_blank" rel="noopener" class="btn btn--white" aria-label="Voir la démo Atlas Immobilier (agence)">
               Voir le démo <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -1318,7 +1320,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
                alt="Argan Royal — Demo e-commerce cosmétique"
                width="1200" height="750" loading="lazy" decoding="async">
           <div class="realisation-card__overlay">
-            <a href="/argan-royal/index.html" target="_blank" rel="noopener" class="btn btn--white">
+            <a href="/argan-royal/index.html" target="_blank" rel="noopener" class="btn btn--white" aria-label="Voir la démo Argan Royal (e-commerce)">
               Voir le démo <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -1732,19 +1734,23 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
   /* Sticky header shadow on scroll */
   const header = document.getElementById('header');
   if (header){
-    let ticking = false;
+    let ticking = false, lastScrolled = false;
+    function update(){
+      const y = window.scrollY;
+      const next = y > 24;
+      if (next !== lastScrolled){
+        header.classList.toggle('scrolled', next);
+        lastScrolled = next;
+      }
+      ticking = false;
+    }
     function onScroll(){
       if (!ticking){
-        requestAnimationFrame(() => {
-          if (window.scrollY > 24) header.classList.add('scrolled');
-          else header.classList.remove('scrolled');
-          ticking = false;
-        });
         ticking = true;
+        requestAnimationFrame(update);
       }
     }
     window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
   }
 
   /* Mobile menu */

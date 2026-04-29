@@ -110,8 +110,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 .footer__brand p{font-size:14px;line-height:1.6;margin-bottom:var(--space-md);color:rgba(255,255,255,0.65);max-width:320px}
 .footer__contact{display:flex;flex-direction:column;gap:8px}
 .footer__contact a{font-size:14px;color:rgba(255,255,255,0.85)}
-.footer__contact a:hover{color:var(--color-accent)}
-.footer__col h3{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-md);font-family:var(--font-body)}
+.footer__contact a:hover{color:var(--color-accent-light)}
+.footer__col h3{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent-light);margin-bottom:var(--space-md);font-family:var(--font-body)}
 .footer__col ul{display:flex;flex-direction:column;gap:8px}
 .footer__col a{font-size:14px;color:rgba(255,255,255,0.7)}
 .footer__col a[aria-current="page"]{color:var(--color-accent)}
@@ -317,8 +317,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 
 <script>
 (function(){'use strict';
-const h=document.getElementById('header');
-if(h){let t=false;function s(){if(!t){requestAnimationFrame(()=>{if(window.scrollY>24)h.classList.add('scrolled');else h.classList.remove('scrolled');t=false});t=true}}window.addEventListener('scroll',s,{passive:true});s()}
+const h=document.getElementById("header");
+if(h){let t=false,ls=false;function u(){const n=window.scrollY>24;if(n!==ls){h.classList.toggle("scrolled",n);ls=n}t=false}function s(){if(!t){t=true;requestAnimationFrame(u)}}window.addEventListener("scroll",s,{passive:true})}
 const tg=document.getElementById('menuToggle'),m=document.getElementById('mobileMenu'),b=document.getElementById('menuBackdrop');
 function o(){m.classList.add('open');b.classList.add('open');tg.classList.add('open');tg.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
 function c(){m.classList.remove('open');b.classList.remove('open');tg.classList.remove('open');tg.setAttribute('aria-expanded','false');document.body.style.overflow=''}

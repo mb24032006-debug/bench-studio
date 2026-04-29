@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format" imagesrcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format 600w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w" imagesizes="(max-width:1024px) 90vw, 540px" fetchpriority="high">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&q=70&fm=webp&auto=format" imagesrcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&q=70&fm=webp&auto=format 480w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=72&fm=webp&auto=format 800w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w" imagesizes="(max-width:480px) 92vw, (max-width:1024px) 80vw, 540px" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"></noscript>
 
@@ -223,8 +223,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 .footer__brand p{font-size:14px;line-height:1.6;margin-bottom:var(--space-md);color:rgba(255,255,255,0.65);max-width:320px}
 .footer__contact{display:flex;flex-direction:column;gap:8px}
 .footer__contact a{font-size:14px;color:rgba(255,255,255,0.85)}
-.footer__contact a:hover{color:var(--color-accent)}
-.footer__col h3{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-md);font-family:var(--font-body)}
+.footer__contact a:hover{color:var(--color-accent-light)}
+.footer__col h3{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent-light);margin-bottom:var(--space-md);font-family:var(--font-body)}
 .footer__col ul{display:flex;flex-direction:column;gap:8px}
 .footer__col a{font-size:14px;color:rgba(255,255,255,0.7)}
 .footer__col a:hover{color:var(--color-white)}
@@ -335,9 +335,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
       </div>
     </div>
     <div class="page-hero__visual">
-      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=75&fm=webp&auto=format"
-           srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format 600w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
-           sizes="(max-width:1024px) 90vw, 540px"
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&q=70&fm=webp&auto=format"
+           srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&q=70&fm=webp&auto=format 480w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=72&fm=webp&auto=format 800w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
+           sizes="(max-width:480px) 92vw, (max-width:1024px) 80vw, 540px"
            alt="Intérieur de restaurant marocain moderne — site BENCH STUDIO"
            width="900" height="675" fetchpriority="high" decoding="async">
     </div>
@@ -642,19 +642,22 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
   'use strict';
   const header = document.getElementById('header');
   if (header){
-    let ticking = false;
+    let ticking = false, lastScrolled = false;
+    function update(){
+      const next = window.scrollY > 24;
+      if (next !== lastScrolled){
+        header.classList.toggle('scrolled', next);
+        lastScrolled = next;
+      }
+      ticking = false;
+    }
     function onScroll(){
       if (!ticking){
-        requestAnimationFrame(() => {
-          if (window.scrollY > 24) header.classList.add('scrolled');
-          else header.classList.remove('scrolled');
-          ticking = false;
-        });
         ticking = true;
+        requestAnimationFrame(update);
       }
     }
     window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
   }
   const toggle = document.getElementById('menuToggle');
   const menu = document.getElementById('mobileMenu');

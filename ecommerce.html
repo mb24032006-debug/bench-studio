@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=75&fm=webp&auto=format" imagesrcset="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=75&fm=webp&auto=format 600w, https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=75&fm=webp&auto=format 1200w" imagesizes="(max-width:1024px) 90vw, 540px" fetchpriority="high">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=480&q=70&fm=webp&auto=format" imagesrcset="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=480&q=70&fm=webp&auto=format 480w, https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=72&fm=webp&auto=format 800w, https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=75&fm=webp&auto=format 1200w" imagesizes="(max-width:480px) 92vw, (max-width:1024px) 80vw, 540px" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"></noscript>
 
@@ -184,8 +184,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 .footer__brand p{font-size:14px;line-height:1.6;margin-bottom:var(--space-md);color:rgba(255,255,255,0.65);max-width:320px}
 .footer__contact{display:flex;flex-direction:column;gap:8px}
 .footer__contact a{font-size:14px;color:rgba(255,255,255,0.85)}
-.footer__contact a:hover{color:var(--color-accent)}
-.footer__col h3{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-md);font-family:var(--font-body)}
+.footer__contact a:hover{color:var(--color-accent-light)}
+.footer__col h3{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent-light);margin-bottom:var(--space-md);font-family:var(--font-body)}
 .footer__col ul{display:flex;flex-direction:column;gap:8px}
 .footer__col a{font-size:14px;color:rgba(255,255,255,0.7)}
 .footer__col a:hover{color:var(--color-white)}
@@ -257,7 +257,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
       </div>
     </div>
     <div class="page-hero__visual">
-      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=900&q=75&fm=webp&auto=format" srcset="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=75&fm=webp&auto=format 600w, https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=75&fm=webp&auto=format 1200w" sizes="(max-width:1024px) 90vw, 540px" alt="Cosmétiques marocains premium — site e-commerce BENCH STUDIO" width="900" height="675" fetchpriority="high" decoding="async">
+      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=480&q=70&fm=webp&auto=format" srcset="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=480&q=70&fm=webp&auto=format 480w, https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=72&fm=webp&auto=format 800w, https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=75&fm=webp&auto=format 1200w" sizes="(max-width:480px) 92vw, (max-width:1024px) 80vw, 540px" alt="Cosmétiques marocains premium — site e-commerce BENCH STUDIO" width="900" height="675" fetchpriority="high" decoding="async">
     </div>
   </div>
 </section>
@@ -464,7 +464,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 <script>
 (function(){'use strict';
 const header=document.getElementById('header');
-if(header){let t=false;function s(){if(!t){requestAnimationFrame(()=>{if(window.scrollY>24)header.classList.add('scrolled');else header.classList.remove('scrolled');t=false});t=true}}window.addEventListener('scroll',s,{passive:true});s()}
+if(header){let t=false,ls=false;function u(){const n=window.scrollY>24;if(n!==ls){header.classList.toggle('scrolled',n);ls=n}t=false}function s(){if(!t){t=true;requestAnimationFrame(u)}}window.addEventListener('scroll',s,{passive:true})}
 const tg=document.getElementById('menuToggle'),m=document.getElementById('mobileMenu'),b=document.getElementById('menuBackdrop');
 function o(){m.classList.add('open');b.classList.add('open');tg.classList.add('open');tg.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
 function c(){m.classList.remove('open');b.classList.remove('open');tg.classList.remove('open');tg.setAttribute('aria-expanded','false');document.body.style.overflow=''}
