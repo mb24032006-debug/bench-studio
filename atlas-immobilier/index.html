@@ -18,25 +18,65 @@
 <meta name="twitter:description" content="Site démo immobilier premium - BENCH STUDIO Casablanca">
 <meta name="theme-color" content="#2563EB">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563EB'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' text-anchor='middle' fill='%23FFFFFF'%3EAI%3C/text%3E%3C/svg%3E">
-<link rel="canonical" href="atlas-immobilier.html">
+<link rel="canonical" href="https://benchstudio.netlify.app/atlas-immobilier/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   "name": "Atlas Immobilier",
-  "description": "Agence immobilière premium à Casablanca.",
+  "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=75&fm=webp",
+  "url": "https://benchstudio.netlify.app/atlas-immobilier/",
+  "description": "Agence immobilière premium à Casablanca depuis 2008. 1247 biens d'exception : villas, penthouses, riads.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "25 Boulevard Zerktouni",
+    "streetAddress": "Twin Center, Boulevard Zerktouni",
     "addressLocality": "Casablanca",
+    "postalCode": "20100",
     "addressCountry": "MA"
   },
-  "telephone": "+212522252525"
+  "geo": {"@type": "GeoCoordinates", "latitude": 33.5879, "longitude": -7.6201},
+  "telephone": "+212522456789",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "17:00"}
+  ],
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "238"},
+  "areaServed": {"@type": "City", "name": "Casablanca"},
+  "knowsAbout": ["Villa", "Appartement", "Penthouse", "Riad", "Investissement immobilier"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Biens d'exception Atlas Immobilier",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "item": {"@type": "Residence", "name": "Villa contemporaine Anfa", "address": "Anfa Supérieur, Casablanca"}},
+    {"@type": "ListItem", "position": 2, "item": {"@type": "Residence", "name": "Penthouse Marina", "address": "Casablanca Marina"}},
+    {"@type": "ListItem", "position": 3, "item": {"@type": "Residence", "name": "Riad rénové Habous", "address": "Quartier Habous, Casablanca"}},
+    {"@type": "ListItem", "position": 4, "item": {"@type": "Residence", "name": "Appartement Maarif Premium", "address": "Maarif, Casablanca"}},
+    {"@type": "ListItem", "position": 5, "item": {"@type": "Residence", "name": "Duplex Bourgogne", "address": "Bourgogne, Casablanca"}},
+    {"@type": "ListItem", "position": 6, "item": {"@type": "Residence", "name": "Immeuble locatif Centre", "address": "Centre-ville, Casablanca"}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Quels sont vos frais d'agence?", "acceptedAnswer": {"@type": "Answer", "text": "3% TTC sur les ventes, 1 mois de loyer pour les locations. Honoraires conformes à la réglementation marocaine."}},
+    {"@type": "Question", "name": "L'estimation est-elle gratuite?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, estimation gratuite et sans engagement par 3 experts indépendants. Rapport détaillé livré sous 48h."}},
+    {"@type": "Question", "name": "Proposez-vous des visites à distance?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, visites virtuelles 360° et appels vidéo HD pour les acheteurs internationaux. Visites physiques sur RDV."}},
+    {"@type": "Question", "name": "Quel est le service après-vente?", "acceptedAnswer": {"@type": "Answer", "text": "12 mois de suivi inclus : démarches juridiques, raccordements, déménagement. Conseillers dédiés disponibles 7j/7."}}
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -86,73 +126,60 @@ ul{list-style:none}
 }
 .skip-link:focus{top:0}
 
-/* ============= DEMO BANNER (UNIFIED) ============= */
+/* ============= DEMO BANNER (ULTRA-VISIBLE BENCH STUDIO) ============= */
 .demo-banner{
-  position:sticky;top:0;z-index:100;
-  background:linear-gradient(90deg,#0A0A0A 0%,#1C1C1C 100%);
-  color:#FAFAF7;
-  border-bottom:1px solid rgba(212,165,116,0.2);
+  position:sticky;top:0;z-index:9999;
+  background:linear-gradient(135deg,#1a1a2e 0%,#c44d1d 100%);
+  color:#fff;
+  padding:12px 20px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.25);
   font-family:'Inter',sans-serif;
 }
-.demo-banner-content{
-  max-width:1400px;margin:0 auto;
-  padding:12px 24px;
+.demo-banner__inner{
+  max-width:1280px;margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
-  gap:24px;
-  font-size:13px;font-weight:500;
+  gap:16px;flex-wrap:wrap;
 }
-.demo-banner-left{
-  display:flex;align-items:center;gap:8px;flex-shrink:0;
+.demo-banner__left{display:flex;align-items:center;gap:12px;flex:1;min-width:240px;flex-wrap:wrap}
+.demo-banner__label{
+  background:#fff;color:#1a1a2e;
+  padding:6px 12px;border-radius:6px;
+  font-weight:800;font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;white-space:nowrap;flex-shrink:0;
 }
-.demo-icon{font-size:14px}
-.demo-text{letter-spacing:0.2px}
-.demo-text strong{color:#D4A574;font-weight:700;letter-spacing:1px}
-.demo-nav{
-  display:flex;align-items:center;gap:16px;
-  flex:1;justify-content:center;
-}
-.demo-nav-label{
-  color:rgba(250,250,247,0.5);
-  font-size:12px;font-weight:600;
-  text-transform:uppercase;letter-spacing:1.5px;
-}
-.demo-nav-link{
+.demo-banner__text{font-size:13px;font-weight:500;letter-spacing:0.2px;color:rgba(255,255,255,0.95)}
+.demo-banner__text strong{color:#fff;font-weight:800;letter-spacing:0.5px}
+.demo-banner__actions{display:flex;gap:8px;flex-shrink:0}
+.demo-banner__btn{
   display:inline-flex;align-items:center;gap:6px;
-  color:rgba(250,250,247,0.85);
-  padding:6px 12px;border-radius:4px;
-  border:1px solid rgba(212,165,116,0.2);
-  transition:background 200ms var(--ease),border-color 200ms var(--ease),color 200ms var(--ease),transform 200ms var(--ease);
-  font-size:12px;font-weight:600;
+  background:#fff;color:#1a1a2e;
+  padding:8px 14px;border-radius:6px;
+  font-size:12px;font-weight:700;letter-spacing:0.3px;white-space:nowrap;
+  transition:transform 200ms var(--ease),box-shadow 200ms var(--ease),background 200ms var(--ease);
+  border:1px solid transparent;
 }
-.demo-nav-link:hover{
-  background:rgba(212,165,116,0.15);
-  border-color:rgba(212,165,116,0.5);
-  color:#D4A574;
-  transform:translateY(-1px);
+.demo-banner__btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.25)}
+.demo-banner__btn--whatsapp{background:#25d366;color:#fff}
+.demo-banner__btn--whatsapp:hover{background:#1eb35a}
+.demo-banner__back{
+  display:inline-flex;align-items:center;gap:4px;
+  color:rgba(255,255,255,0.85);font-size:12px;font-weight:600;
+  padding:6px 10px;border-radius:6px;
+  transition:color 200ms var(--ease),background 200ms var(--ease);flex-shrink:0;
 }
-.demo-back{
-  display:inline-flex;align-items:center;gap:6px;
-  color:#D4A574;font-weight:600;flex-shrink:0;
-  padding:6px 12px;border-radius:4px;
-  transition:background 200ms var(--ease),transform 200ms var(--ease);
+.demo-banner__back:hover{color:#fff;background:rgba(255,255,255,0.1)}
+@media(max-width:768px){
+  .demo-banner{padding:10px 16px}
+  .demo-banner__inner{gap:10px}
+  .demo-banner__text{font-size:12px;width:100%;order:2}
+  .demo-banner__label{font-size:10px;padding:4px 10px}
+  .demo-banner__btn{font-size:11px;padding:7px 10px}
+  .demo-banner__back span:last-child{display:none}
 }
-.demo-back:hover{background:rgba(212,165,116,0.1);transform:translateX(-2px)}
-@media(max-width:1024px){
+@media(max-width:480px){
   .demo-banner{position:relative}
-  .demo-banner-content{flex-wrap:wrap;gap:12px}
-  .demo-nav{
-    width:100%;order:3;
-    justify-content:flex-start;
-    border-top:1px solid rgba(212,165,116,0.15);
-    padding-top:12px;margin-top:4px;
-  }
-}
-@media(max-width:640px){
-  .demo-banner-content{padding:10px 16px;font-size:11px}
-  .demo-text{font-size:11px}
-  .demo-nav-label{display:none}
-  .demo-nav-link{font-size:11px;padding:4px 8px}
-  .demo-back span:last-child{display:none}
+  .demo-banner__actions{width:100%;order:3;justify-content:stretch}
+  .demo-banner__btn{flex:1;justify-content:center}
 }
 
 /* ============= HEADER ============= */
@@ -475,27 +502,19 @@ ul{list-style:none}
 }
 .property-image{
   position:relative;
-  height:220px;
+  height:240px;
   overflow:hidden;
+  background:#F1F5F9;
 }
+.property-image img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+  transition:transform 600ms var(--ease);
+}
+.property-card:hover .property-image img{transform:scale(1.05)}
 .property-image::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at 70% 30%,rgba(255,255,255,0.18) 0%,transparent 50%),
-             radial-gradient(circle at 30% 70%,rgba(0,0,0,0.20) 0%,transparent 60%);
-}
-.property-image[data-color="blue"]{background:linear-gradient(135deg,#3B82F6 0%,#2563EB 60%,#1E3A8A 100%)}
-.property-image[data-color="gold"]{background:linear-gradient(135deg,#FBBF24 0%,#D97706 60%,#92400E 100%)}
-.property-image[data-color="dark"]{background:linear-gradient(135deg,#475569 0%,#1E293B 60%,#0F172A 100%)}
-.property-image[data-color="light"]{background:linear-gradient(135deg,#93C5FD 0%,#60A5FA 60%,#2563EB 100%)}
-.property-image[data-color="warm"]{background:linear-gradient(135deg,#FCD34D 0%,#F59E0B 60%,#B45309 100%)}
-.property-image[data-color="deep"]{background:linear-gradient(135deg,#1E40AF 0%,#1E3A8A 60%,#172554 100%)}
-
-.property-image::before{
-  content:'';position:absolute;
-  inset:0;
-  background-image:
-    repeating-linear-gradient(45deg,transparent 0,transparent 30px,rgba(255,255,255,0.05) 30px,rgba(255,255,255,0.05) 31px);
-  pointer-events:none;
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 60%,rgba(15,23,42,0.18) 100%);
 }
 
 .property-badge{
@@ -754,11 +773,11 @@ ul{list-style:none}
   background:radial-gradient(circle at 70% 30%,rgba(255,255,255,0.15) 0%,transparent 50%),
              radial-gradient(circle at 30% 70%,rgba(0,0,0,0.20) 0%,transparent 60%);
 }
-.detail-main-image[data-img="0"]{background:linear-gradient(135deg,#3B82F6 0%,#1E40AF 60%,#1E3A8A 100%)}
-.detail-main-image[data-img="1"]{background:linear-gradient(135deg,#0EA5E9 0%,#0369A1 60%,#0C4A6E 100%)}
-.detail-main-image[data-img="2"]{background:linear-gradient(135deg,#6366F1 0%,#4338CA 60%,#312E81 100%)}
-.detail-main-image[data-img="3"]{background:linear-gradient(135deg,#8B5CF6 0%,#6D28D9 60%,#4C1D95 100%)}
-.detail-main-image[data-img="4"]{background:linear-gradient(135deg,#0F766E 0%,#115E59 60%,#134E4A 100%)}
+.detail-main-image[data-img="0"]{background:url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=75&fm=webp&auto=format") center/cover no-repeat,#1E293B}
+.detail-main-image[data-img="1"]{background:url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=75&fm=webp&auto=format") center/cover no-repeat,#1E293B}
+.detail-main-image[data-img="2"]{background:url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=75&fm=webp&auto=format") center/cover no-repeat,#1E293B}
+.detail-main-image[data-img="3"]{background:url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=75&fm=webp&auto=format") center/cover no-repeat,#1E293B}
+.detail-main-image[data-img="4"]{background:url("https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?w=1200&q=75&fm=webp&auto=format") center/cover no-repeat,#1E293B}
 
 .detail-main-overlay{
   position:absolute;
@@ -790,11 +809,11 @@ ul{list-style:none}
   content:'';position:absolute;inset:0;
   background:radial-gradient(circle at 70% 30%,rgba(255,255,255,0.15) 0%,transparent 50%);
 }
-.detail-thumb[data-img="0"]{background:linear-gradient(135deg,#3B82F6,#1E40AF)}
-.detail-thumb[data-img="1"]{background:linear-gradient(135deg,#0EA5E9,#0369A1)}
-.detail-thumb[data-img="2"]{background:linear-gradient(135deg,#6366F1,#4338CA)}
-.detail-thumb[data-img="3"]{background:linear-gradient(135deg,#8B5CF6,#6D28D9)}
-.detail-thumb[data-img="4"]{background:linear-gradient(135deg,#0F766E,#115E59)}
+.detail-thumb[data-img="0"]{background:url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=200&q=75&fm=webp&auto=format") center/cover no-repeat}
+.detail-thumb[data-img="1"]{background:url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=200&q=75&fm=webp&auto=format") center/cover no-repeat}
+.detail-thumb[data-img="2"]{background:url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&q=75&fm=webp&auto=format") center/cover no-repeat}
+.detail-thumb[data-img="3"]{background:url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=200&q=75&fm=webp&auto=format") center/cover no-repeat}
+.detail-thumb[data-img="4"]{background:url("https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?w=200&q=75&fm=webp&auto=format") center/cover no-repeat}
 .detail-thumb:hover{transform:translateY(-2px);opacity:1}
 .detail-thumb.active{
   border-color:var(--accent-primary);
@@ -1458,6 +1477,54 @@ ul{list-style:none}
 .floating-whatsapp:hover .whatsapp-tooltip,
 .floating-whatsapp:focus .whatsapp-tooltip{opacity:1;transform:translateX(0)}
 
+/* ============= FAQ ============= */
+.faq-section{padding:120px 32px;background:var(--bg-light)}
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:#fff;border:1px solid var(--border-subtle);border-radius:8px;overflow:hidden;transition:border-color 200ms var(--ease),box-shadow 200ms var(--ease)}
+.faq-item:hover{border-color:var(--border-default)}
+.faq-item[open]{border-color:var(--accent-primary);box-shadow:var(--shadow-md)}
+.faq-item summary{padding:20px 28px;font-family:'DM Serif Display',serif;font-size:18px;font-weight:400;color:var(--text-primary);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;list-style:none;transition:color 200ms var(--ease)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:24px;font-weight:300;color:var(--accent-primary);transition:transform 200ms var(--ease);flex-shrink:0}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{color:var(--accent-primary)}
+.faq-item p{padding:0 28px 20px;font-size:15px;line-height:1.7;color:var(--text-secondary)}
+.faq-item p strong{color:var(--text-primary);font-weight:700}
+
+/* ============= BENCH-CTA ============= */
+.bench-cta{padding:120px 32px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#1a1a2e 100%);color:#fff;position:relative;overflow:hidden}
+.bench-cta::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 20% 30%,rgba(196,77,29,0.18) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(37,99,235,0.12) 0%,transparent 50%)}
+.bench-cta__content{position:relative;z-index:1;max-width:780px;margin:0 auto;text-align:center}
+.bench-cta__label{display:inline-block;background:rgba(196,77,29,0.15);border:1px solid rgba(196,77,29,0.4);color:#ff8c5a;padding:8px 16px;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.bench-cta__title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,42px);font-weight:400;line-height:1.15;color:#fff;margin-bottom:20px;letter-spacing:-0.5px}
+.bench-cta__title em{font-style:italic;color:#ff8c5a}
+.bench-cta__lead{font-size:17px;line-height:1.7;color:rgba(255,255,255,0.78);margin-bottom:32px}
+.bench-cta__lead strong{color:#fff;font-weight:700}
+.bench-cta__features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;text-align:left;max-width:560px;margin:0 auto 32px}
+.bench-cta__features li{font-size:14px;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:8px}
+.bench-cta__features li::before{content:'✓';color:#25d366;font-weight:700;font-size:16px}
+.bench-cta__pricing{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.bench-cta__price-block{display:inline-flex;align-items:baseline;gap:12px;justify-content:center}
+.bench-cta__price-old{font-family:'JetBrains Mono',monospace;font-size:16px;text-decoration:line-through;color:rgba(255,255,255,0.5)}
+.bench-cta__price-new{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:#ff8c5a;letter-spacing:-1px;line-height:1}
+.bench-cta__price-note{font-size:13px;font-weight:600;letter-spacing:0.5px;color:#ffd700}
+.bench-cta__actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.bench-cta__btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 28px;border-radius:6px;font-size:14px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;transition:transform 200ms var(--ease),box-shadow 200ms var(--ease),background 200ms var(--ease),gap 250ms var(--ease)}
+.bench-cta__btn--primary{background:#c44d1d;color:#fff;box-shadow:0 8px 24px rgba(196,77,29,0.3)}
+.bench-cta__btn--primary:hover{background:#a83e15;transform:translateY(-2px);box-shadow:0 12px 32px rgba(196,77,29,0.45);gap:12px}
+.bench-cta__btn--whatsapp{background:#25d366;color:#fff}
+.bench-cta__btn--whatsapp:hover{background:#1eb35a;transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,0.4);gap:12px}
+.bench-cta__guarantee{font-size:13px;color:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+@media(max-width:768px){
+  .faq-section,.bench-cta{padding:80px 20px}
+  .faq-item summary{padding:16px 20px;font-size:16px}
+  .faq-item p{padding:0 20px 16px;font-size:14px}
+  .bench-cta__features{grid-template-columns:1fr}
+  .bench-cta__price-new{font-size:36px}
+  .bench-cta__actions{flex-direction:column;width:100%}
+  .bench-cta__btn{width:100%}
+}
+
 /* ============= REVEAL ============= */
 .reveal{
   opacity:0;transform:translateY(24px);
@@ -1541,25 +1608,24 @@ ul{list-style:none}
 
 <a class="skip-link" href="#main">Aller au contenu</a>
 
-<!-- ===== DEMO BANNER (UNIFIED) ===== -->
-<div class="demo-banner" role="banner" aria-label="Bannière de démonstration">
-  <div class="demo-banner-content">
-    <div class="demo-banner-left">
-      <span class="demo-icon" aria-hidden="true">🎨</span>
-      <span class="demo-text">Site démo conçu par <strong>BENCH STUDIO</strong></span>
+<!-- ===== DEMO BANNER (ULTRA-VISIBLE BENCH STUDIO) ===== -->
+<div class="demo-banner" role="region" aria-label="Bannière site démonstration">
+  <div class="demo-banner__inner">
+    <div class="demo-banner__left">
+      <span class="demo-banner__label">🎨 Site démo</span>
+      <span class="demo-banner__text">Conçu par <strong>BENCH STUDIO</strong> · Votre agence immobilière mérite la même qualité</span>
     </div>
-    <nav class="demo-nav" aria-label="Navigation entre démos">
-      <span class="demo-nav-label">Voir aussi:</span>
-      <a href="lemarrakchi.html" class="demo-nav-link">
-        <span aria-hidden="true">🍽️</span> Le Marrakchi
+    <div class="demo-banner__actions">
+      <a href="../index.html#tarifs" class="demo-banner__btn">Voir tarifs <span aria-hidden="true">→</span></a>
+      <a href="https://wa.me/212786653550?text=Bonjour%20Mohamed%2C%20j%27ai%20vu%20le%20demo%20Atlas%20Immobilier%20et%20je%20souhaite%20discuter%20d%27un%20projet"
+         class="demo-banner__btn demo-banner__btn--whatsapp"
+         target="_blank" rel="noopener">
+        <span aria-hidden="true">💬</span> WhatsApp
       </a>
-      <a href="argan-royal.html" class="demo-nav-link">
-        <span aria-hidden="true">🛒</span> Argan Royal
-      </a>
-    </nav>
-    <a href="index.html" class="demo-back">
+    </div>
+    <a href="../index.html" class="demo-banner__back">
       <span aria-hidden="true">←</span>
-      <span>Retour au studio</span>
+      <span>Retour studio</span>
     </a>
   </div>
 </div>
@@ -1692,7 +1758,12 @@ ul{list-style:none}
     <div class="properties-grid" id="propertiesGrid">
 
       <article class="property-card" tabindex="0">
-        <div class="property-image" data-color="blue" aria-hidden="true">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Villa contemporaine de prestige à Anfa Supérieur"
+               width="600" height="450" loading="lazy" decoding="async">
           <span class="property-badge" data-type="exclusivite">Exclusivité</span>
           <button class="property-favorite" type="button" aria-label="Ajouter aux favoris" aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -1724,7 +1795,12 @@ ul{list-style:none}
       </article>
 
       <article class="property-card" tabindex="0">
-        <div class="property-image" data-color="gold" aria-hidden="true">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Penthouse moderne avec vue mer à Casablanca Marina"
+               width="600" height="450" loading="lazy" decoding="async">
           <span class="property-badge" data-type="nouveau">Nouveau</span>
           <button class="property-favorite" type="button" aria-label="Ajouter aux favoris" aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -1744,7 +1820,12 @@ ul{list-style:none}
       </article>
 
       <article class="property-card" tabindex="0">
-        <div class="property-image" data-color="dark" aria-hidden="true">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Riad traditionnel rénové dans le quartier Habous"
+               width="600" height="450" loading="lazy" decoding="async">
           <span class="property-badge" data-type="opportunite">Opportunité</span>
           <button class="property-favorite" type="button" aria-label="Ajouter aux favoris" aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -1764,7 +1845,12 @@ ul{list-style:none}
       </article>
 
       <article class="property-card" tabindex="0">
-        <div class="property-image" data-color="light" aria-hidden="true">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Appartement Premium lumineux quartier Maarif"
+               width="600" height="450" loading="lazy" decoding="async">
           <span class="property-badge" data-type="vendu">Vendu rapidement</span>
           <button class="property-favorite" type="button" aria-label="Ajouter aux favoris" aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -1784,7 +1870,12 @@ ul{list-style:none}
       </article>
 
       <article class="property-card" tabindex="0">
-        <div class="property-image" data-color="warm" aria-hidden="true">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Duplex contemporain avec terrasse à Bourgogne"
+               width="600" height="450" loading="lazy" decoding="async">
           <span class="property-badge" data-type="coeur">Cœur de ville</span>
           <button class="property-favorite" type="button" aria-label="Ajouter aux favoris" aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -1804,7 +1895,12 @@ ul{list-style:none}
       </article>
 
       <article class="property-card" tabindex="0">
-        <div class="property-image" data-color="deep" aria-hidden="true">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Immeuble locatif rentabilité 7% Centre-ville Casablanca"
+               width="600" height="450" loading="lazy" decoding="async">
           <span class="property-badge" data-type="invest">Investissement</span>
           <button class="property-favorite" type="button" aria-label="Ajouter aux favoris" aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -2247,6 +2343,91 @@ ul{list-style:none}
   </div>
 </section>
 
+<!-- ===== FAQ ===== -->
+<section class="faq-section reveal" id="faq" aria-labelledby="faq-title">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-header">
+      <span class="section-label">Vos questions</span>
+      <h2 id="faq-title" class="section-title">Tout ce que vous voulez <em>savoir</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Quels sont vos frais d'agence ?</summary>
+        <p><strong>3% TTC</strong> sur les ventes (négociable au-delà de 10M DH), <strong>1 mois de loyer</strong> pour les locations. Honoraires conformes à la réglementation marocaine. Aucun frais caché, devis détaillé avant tout engagement.</p>
+      </details>
+      <details class="faq-item">
+        <summary>L'estimation est-elle gratuite ?</summary>
+        <p>Oui, <strong>estimation gratuite et sans engagement</strong>. Trois experts indépendants évaluent votre bien selon le marché actuel, l'emplacement et les comparables. Rapport détaillé livré sous 48h.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quels documents juridiques fournissez-vous ?</summary>
+        <p>Notre service juridique vous accompagne : compromis, acte authentique, vérifications cadastrales, attestation de propriété. Partenariat avec 3 notaires de Casablanca pour sécuriser chaque transaction.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quel délai entre l'accord et la signature ?</summary>
+        <p>Généralement <strong>2 à 4 semaines</strong> entre l'accord oral et la signature de l'acte authentique. Délai variable selon l'origine du financement (cash vs crédit) et la complexité juridique.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Aidez-vous au crédit bancaire ?</summary>
+        <p>Oui, partenariats avec <strong>5 banques</strong> du Maroc (BMCE, Attijari, BMCI, Société Générale, CIH). Taux préférentiels négociés pour nos clients. Constitution du dossier prise en charge par notre équipe.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Garantissez-vous la confidentialité ?</summary>
+        <p>Oui, <strong>NDA systématique</strong> pour toute transaction au-dessus de 5M DH. Visites uniquement avec acheteurs qualifiés (preuve de financement). Protection de la vie privée du vendeur garantie.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Proposez-vous des visites à distance ?</summary>
+        <p>Oui, <strong>visites virtuelles 360°</strong> et appels vidéo HD pour les acheteurs internationaux. Reportages photo professionnels, drone pour les vues aériennes. Visites physiques sur RDV.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quel est votre service après-vente ?</summary>
+        <p><strong>12 mois de suivi inclus</strong> : démarches juridiques post-acquisition, raccordements (eau, électricité, internet), assistance déménagement, recommandations artisans. Conseillers dédiés disponibles 7j/7.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENCH STUDIO CONVERSION CTA ===== -->
+<section class="bench-cta reveal" aria-labelledby="bench-cta-title">
+  <div class="bench-cta__content">
+    <span class="bench-cta__label">💼 BENCH STUDIO · Studio digital Casablanca</span>
+    <h2 id="bench-cta-title" class="bench-cta__title">
+      Vous dirigez une <em>agence immobilière</em> ?
+    </h2>
+    <p class="bench-cta__lead">
+      Voici exactement le type de site qui peut transformer votre business. Cette démo illustre les fonctionnalités du <strong>Pack Growth</strong>, conçu pour les agences immobilières et restaurants premium.
+    </p>
+    <ul class="bench-cta__features">
+      <li>Catalogue de biens illimité</li>
+      <li>Recherche multi-critères avancée</li>
+      <li>Fiches biens optimisées SEO</li>
+      <li>Formulaires d'estimation</li>
+      <li>Gallery photos 360°</li>
+      <li>Lighthouse 95+ garanti</li>
+    </ul>
+    <div class="bench-cta__pricing">
+      <div class="bench-cta__price-block">
+        <span class="bench-cta__price-old">6 500 DH</span>
+        <span class="bench-cta__price-new">5 200 DH</span>
+      </div>
+      <span class="bench-cta__price-note">🎁 Early-Bird Q2 2026 · -20% jusqu'au 31 mai</span>
+    </div>
+    <div class="bench-cta__actions">
+      <a href="../index.html#tarifs" class="bench-cta__btn bench-cta__btn--primary">
+        Voir le pack complet <span aria-hidden="true">→</span>
+      </a>
+      <a href="https://wa.me/212786653550?text=Bonjour%20Mohamed%2C%20je%20veux%20un%20site%20comme%20Atlas%20Immobilier%20pour%20mon%20agence"
+         class="bench-cta__btn bench-cta__btn--whatsapp"
+         target="_blank" rel="noopener">
+        <span aria-hidden="true">💬</span> WhatsApp direct
+      </a>
+    </div>
+    <p class="bench-cta__guarantee">
+      🛡️ Lighthouse 95+ ou remboursé · Code 100% à vous · Support 30j inclus
+    </p>
+  </div>
+</section>
+
 </main>
 
 <!-- ===== FOOTER ===== -->
@@ -2309,11 +2490,11 @@ ul{list-style:none}
         <p class="footer-copyright" id="footerCopyright">© 2026 Atlas Immobilier · Tous droits réservés</p>
         <div class="footer-portfolio">
           <span class="portfolio-label">Découvrez aussi:</span>
-          <a href="lemarrakchi.html" class="portfolio-link"><span aria-hidden="true">🍽️</span> Le Marrakchi</a>
+          <a href="../lemarrakchi/index.html" class="portfolio-link"><span aria-hidden="true">🍽️</span> Le Marrakchi</a>
           <span class="portfolio-separator" aria-hidden="true">·</span>
-          <a href="argan-royal.html" class="portfolio-link"><span aria-hidden="true">🛒</span> Argan Royal</a>
+          <a href="../argan-royal/index.html" class="portfolio-link"><span aria-hidden="true">🛒</span> Argan Royal</a>
         </div>
-        <a href="index.html" class="bench-attribution-link">
+        <a href="../index.html" class="bench-attribution-link">
           <span class="bench-icon" aria-hidden="true">🎨</span>
           <span>Site conçu par</span>
           <strong class="bench-brand">BENCH STUDIO</strong>
