@@ -18,27 +18,51 @@
 <meta name="twitter:description" content="Site démo restaurant premium - BENCH STUDIO Casablanca">
 <meta name="theme-color" content="#C2410C">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23C2410C'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' text-anchor='middle' fill='%23FFFBF5'%3ELM%3C/text%3E%3C/svg%3E">
-<link rel="canonical" href="lemarrakchi.html">
+<link rel="canonical" href="https://benchstudio.netlify.app/lemarrakchi/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Le Marrakchi",
-  "description": "Restaurant marocain premium à Casablanca depuis 1985.",
+  "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp",
+  "url": "https://benchstudio.netlify.app/lemarrakchi/",
+  "description": "Restaurant marocain premium à Casablanca depuis 1985. Tajines, couscous, pastilla.",
   "servesCuisine": "Marocaine",
   "priceRange": "300 DH - 800 DH",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "12 Boulevard Anfa",
     "addressLocality": "Casablanca",
+    "postalCode": "20070",
     "addressCountry": "MA"
   },
-  "telephone": "+212522123456"
+  "geo": {"@type": "GeoCoordinates", "latitude": 33.5731, "longitude": -7.6298},
+  "telephone": "+212522123456",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "12:00", "closes": "23:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "12:00", "closes": "00:30"}
+  ],
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1247"},
+  "acceptsReservations": "True"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Acceptez-vous les groupes?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, jusqu'à 30 personnes en salle privée. Réservation 48h à l'avance recommandée."}},
+    {"@type": "Question", "name": "Avez-vous un menu enfant?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, menu enfant à 95 DH avec entrée + plat + dessert + boisson."}},
+    {"@type": "Question", "name": "Cuisine 100% halal?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, certifiée halal. Toutes nos viandes proviennent de boucheries certifiées."}},
+    {"@type": "Question", "name": "Privatisation possible?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, salle privée 50 places assises pour événements, mariages, anniversaires."}}
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -86,73 +110,75 @@ ul{list-style:none}
 }
 .skip-link:focus{top:0}
 
-/* ============= DEMO BANNER (UNIFIED) ============= */
+/* ============= DEMO BANNER (ULTRA-VISIBLE BENCH STUDIO) ============= */
 .demo-banner{
-  position:sticky;top:0;z-index:100;
-  background:linear-gradient(90deg,#0A0A0A 0%,#1C1C1C 100%);
-  color:#FAFAF7;
-  border-bottom:1px solid rgba(212,165,116,0.2);
+  position:sticky;top:0;z-index:9999;
+  background:linear-gradient(135deg,#1a1a2e 0%,#c44d1d 100%);
+  color:#fff;
+  padding:12px 20px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.25);
   font-family:'Inter',sans-serif;
 }
-.demo-banner-content{
-  max-width:1400px;margin:0 auto;
-  padding:12px 24px;
+.demo-banner__inner{
+  max-width:1280px;margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
-  gap:24px;
-  font-size:13px;font-weight:500;
+  gap:16px;flex-wrap:wrap;
 }
-.demo-banner-left{
-  display:flex;align-items:center;gap:8px;flex-shrink:0;
+.demo-banner__left{
+  display:flex;align-items:center;gap:12px;
+  flex:1;min-width:240px;flex-wrap:wrap;
 }
-.demo-icon{font-size:14px}
-.demo-text{letter-spacing:0.2px}
-.demo-text strong{color:#D4A574;font-weight:700;letter-spacing:1px}
-.demo-nav{
-  display:flex;align-items:center;gap:16px;
-  flex:1;justify-content:center;
+.demo-banner__label{
+  background:#fff;color:#1a1a2e;
+  padding:6px 12px;border-radius:6px;
+  font-weight:800;font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;white-space:nowrap;
+  flex-shrink:0;
 }
-.demo-nav-label{
-  color:rgba(250,250,247,0.5);
-  font-size:12px;font-weight:600;
-  text-transform:uppercase;letter-spacing:1.5px;
+.demo-banner__text{
+  font-size:13px;font-weight:500;letter-spacing:0.2px;
+  color:rgba(255,255,255,0.95);
 }
-.demo-nav-link{
+.demo-banner__text strong{
+  color:#fff;font-weight:800;letter-spacing:0.5px;
+}
+.demo-banner__actions{display:flex;gap:8px;flex-shrink:0}
+.demo-banner__btn{
   display:inline-flex;align-items:center;gap:6px;
-  color:rgba(250,250,247,0.85);
-  padding:6px 12px;border-radius:4px;
-  border:1px solid rgba(212,165,116,0.2);
-  transition:background 200ms var(--ease),border-color 200ms var(--ease),color 200ms var(--ease),transform 200ms var(--ease);
+  background:#fff;color:#1a1a2e;
+  padding:8px 14px;border-radius:6px;
+  font-size:12px;font-weight:700;letter-spacing:0.3px;
+  white-space:nowrap;
+  transition:transform 200ms var(--ease),box-shadow 200ms var(--ease),background 200ms var(--ease);
+  border:1px solid transparent;
+}
+.demo-banner__btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+.demo-banner__btn--whatsapp{background:#25d366;color:#fff}
+.demo-banner__btn--whatsapp:hover{background:#1eb35a}
+.demo-banner__back{
+  display:inline-flex;align-items:center;gap:4px;
+  color:rgba(255,255,255,0.85);
   font-size:12px;font-weight:600;
+  padding:6px 10px;border-radius:6px;
+  transition:color 200ms var(--ease),background 200ms var(--ease);
+  flex-shrink:0;
 }
-.demo-nav-link:hover{
-  background:rgba(212,165,116,0.15);
-  border-color:rgba(212,165,116,0.5);
-  color:#D4A574;
-  transform:translateY(-1px);
+.demo-banner__back:hover{color:#fff;background:rgba(255,255,255,0.1)}
+@media(max-width:768px){
+  .demo-banner{padding:10px 16px}
+  .demo-banner__inner{gap:10px}
+  .demo-banner__text{font-size:12px;width:100%;order:2}
+  .demo-banner__label{font-size:10px;padding:4px 10px}
+  .demo-banner__btn{font-size:11px;padding:7px 10px}
+  .demo-banner__back span:last-child{display:none}
 }
-.demo-back{
-  display:inline-flex;align-items:center;gap:6px;
-  color:#D4A574;font-weight:600;flex-shrink:0;
-  padding:6px 12px;border-radius:4px;
-  transition:background 200ms var(--ease),transform 200ms var(--ease);
-}
-.demo-back:hover{background:rgba(212,165,116,0.1);transform:translateX(-2px)}
-@media(max-width:1024px){
+@media(max-width:480px){
   .demo-banner{position:relative}
-  .demo-banner-content{flex-wrap:wrap;gap:12px}
-  .demo-nav{
-    width:100%;order:3;
-    justify-content:flex-start;
-    border-top:1px solid rgba(212,165,116,0.15);
-    padding-top:12px;margin-top:4px;
-  }
-}
-@media(max-width:640px){
-  .demo-banner-content{padding:10px 16px;font-size:11px}
-  .demo-text{font-size:11px}
-  .demo-nav-label{display:none}
-  .demo-nav-link{font-size:11px;padding:4px 8px}
-  .demo-back span:last-child{display:none}
+  .demo-banner__actions{width:100%;order:3;justify-content:stretch}
+  .demo-banner__btn{flex:1;justify-content:center}
 }
 
 /* ============= HEADER ============= */
@@ -544,20 +570,21 @@ ul{list-style:none}
   border-color:var(--accent-primary);
 }
 .dish-image{
-  height:200px;position:relative;
-  background-size:cover;background-position:center;
+  height:240px;position:relative;
+  overflow:hidden;
+  background:#F5EFE6;
 }
+.dish-image img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 600ms var(--ease);
+}
+.dish-card:hover .dish-image img{transform:scale(1.05)}
 .dish-image::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at 70% 30%,rgba(255,255,255,0.15) 0%,transparent 50%),
-             radial-gradient(circle at 30% 70%,rgba(0,0,0,0.15) 0%,transparent 50%);
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 50%,rgba(26,15,8,0.10) 100%);
 }
-.dish-image[data-color="orange"]{background:linear-gradient(135deg,#F97316 0%,#C2410C 60%,#7C2D12 100%)}
-.dish-image[data-color="gold"]{background:linear-gradient(135deg,#FCD34D 0%,#D4A574 60%,#92400E 100%)}
-.dish-image[data-color="brown"]{background:linear-gradient(135deg,#B45309 0%,#9A3412 60%,#451A03 100%)}
-.dish-image[data-color="red"]{background:linear-gradient(135deg,#DC2626 0%,#991B1B 60%,#7F1D1D 100%)}
-.dish-image[data-color="yellow"]{background:linear-gradient(135deg,#FBBF24 0%,#F59E0B 60%,#B45309 100%)}
-.dish-image[data-color="cream"]{background:linear-gradient(135deg,#FEF3C7 0%,#FCD34D 60%,#D4A574 100%)}
 .dish-content{padding:24px}
 .dish-header{
   display:flex;align-items:flex-start;justify-content:space-between;
@@ -1204,6 +1231,158 @@ input[type="date"]::-webkit-calendar-picker-indicator{
   opacity:1;transform:translateX(0);
 }
 
+/* ============= FAQ ============= */
+.faq-section{
+  padding:120px 32px;
+  background:var(--bg-warm);
+}
+.faq-list{
+  max-width:780px;margin:0 auto;
+  display:flex;flex-direction:column;gap:12px;
+}
+.faq-item{
+  background:#fff;
+  border:1px solid var(--border-subtle);
+  border-radius:8px;
+  overflow:hidden;
+  transition:border-color 200ms var(--ease),box-shadow 200ms var(--ease);
+}
+.faq-item:hover{border-color:var(--border-warm)}
+.faq-item[open]{border-color:var(--accent-primary);box-shadow:var(--shadow-md)}
+.faq-item summary{
+  padding:20px 28px;
+  font-family:'Playfair Display',serif;font-size:18px;font-weight:600;
+  color:var(--text-primary);cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  list-style:none;
+  transition:color 200ms var(--ease);
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:'+';
+  font-size:24px;font-weight:300;color:var(--accent-primary);
+  transition:transform 200ms var(--ease);flex-shrink:0;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{color:var(--accent-primary)}
+.faq-item p{
+  padding:0 28px 20px;
+  font-size:15px;line-height:1.7;
+  color:var(--text-secondary);
+}
+.faq-item p strong{color:var(--text-primary);font-weight:700}
+
+/* ============= BENCH-CTA (Conversion to BENCH STUDIO) ============= */
+.bench-cta{
+  padding:120px 32px;
+  background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#1a1a2e 100%);
+  color:#fff;
+  position:relative;overflow:hidden;
+}
+.bench-cta::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(196,77,29,0.18) 0%,transparent 50%),
+    radial-gradient(circle at 80% 70%,rgba(212,165,116,0.12) 0%,transparent 50%);
+}
+.bench-cta__content{
+  position:relative;z-index:1;
+  max-width:780px;margin:0 auto;text-align:center;
+}
+.bench-cta__label{
+  display:inline-block;
+  background:rgba(196,77,29,0.15);
+  border:1px solid rgba(196,77,29,0.4);
+  color:#ff8c5a;
+  padding:8px 16px;border-radius:9999px;
+  font-size:12px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.bench-cta__title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,42px);font-weight:700;
+  line-height:1.15;color:#fff;
+  margin-bottom:20px;letter-spacing:-0.5px;
+}
+.bench-cta__title em{font-style:italic;color:#ff8c5a}
+.bench-cta__lead{
+  font-size:17px;line-height:1.7;
+  color:rgba(255,255,255,0.78);
+  margin-bottom:32px;
+}
+.bench-cta__lead strong{color:#fff;font-weight:700}
+.bench-cta__features{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+  text-align:left;
+  max-width:560px;margin:0 auto 32px;
+}
+.bench-cta__features li{
+  font-size:14px;color:rgba(255,255,255,0.85);
+  display:flex;align-items:center;gap:8px;
+}
+.bench-cta__features li::before{
+  content:'✓';color:#25d366;font-weight:700;font-size:16px;
+}
+.bench-cta__pricing{
+  display:flex;flex-direction:column;gap:8px;
+  margin-bottom:32px;
+}
+.bench-cta__price-block{
+  display:inline-flex;align-items:baseline;gap:12px;justify-content:center;
+}
+.bench-cta__price-old{
+  font-family:'JetBrains Mono',monospace;font-size:16px;
+  text-decoration:line-through;color:rgba(255,255,255,0.5);
+}
+.bench-cta__price-new{
+  font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;
+  color:#ff8c5a;letter-spacing:-1px;line-height:1;
+}
+.bench-cta__price-note{
+  font-size:13px;font-weight:600;letter-spacing:0.5px;
+  color:#D4A574;
+}
+.bench-cta__actions{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  margin-bottom:24px;
+}
+.bench-cta__btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px 28px;border-radius:6px;
+  font-size:14px;font-weight:700;letter-spacing:0.5px;
+  text-transform:uppercase;
+  transition:transform 200ms var(--ease),box-shadow 200ms var(--ease),background 200ms var(--ease),gap 250ms var(--ease);
+}
+.bench-cta__btn--primary{
+  background:#c44d1d;color:#fff;
+  box-shadow:0 8px 24px rgba(196,77,29,0.3);
+}
+.bench-cta__btn--primary:hover{
+  background:#a83e15;
+  transform:translateY(-2px);
+  box-shadow:0 12px 32px rgba(196,77,29,0.45);gap:12px;
+}
+.bench-cta__btn--whatsapp{background:#25d366;color:#fff}
+.bench-cta__btn--whatsapp:hover{
+  background:#1eb35a;transform:translateY(-2px);
+  box-shadow:0 12px 32px rgba(37,211,102,0.4);gap:12px;
+}
+.bench-cta__guarantee{
+  font-size:13px;color:rgba(255,255,255,0.6);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  flex-wrap:wrap;
+}
+@media(max-width:768px){
+  .faq-section,.bench-cta{padding:80px 20px}
+  .faq-item summary{padding:16px 20px;font-size:16px}
+  .faq-item p{padding:0 20px 16px;font-size:14px}
+  .bench-cta__features{grid-template-columns:1fr}
+  .bench-cta__price-new{font-size:36px}
+  .bench-cta__actions{flex-direction:column;width:100%}
+  .bench-cta__btn{width:100%}
+}
+
 /* ============= REVEAL ANIMATIONS ============= */
 .reveal{
   opacity:0;transform:translateY(24px);
@@ -1281,25 +1460,24 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 <a class="skip-link" href="#main">Aller au contenu</a>
 
-<!-- ===== DEMO BANNER (UNIFIED) ===== -->
-<div class="demo-banner" role="banner" aria-label="Bannière de démonstration">
-  <div class="demo-banner-content">
-    <div class="demo-banner-left">
-      <span class="demo-icon" aria-hidden="true">🎨</span>
-      <span class="demo-text">Site démo conçu par <strong>BENCH STUDIO</strong></span>
+<!-- ===== DEMO BANNER (ULTRA-VISIBLE BENCH STUDIO) ===== -->
+<div class="demo-banner" role="region" aria-label="Bannière site démonstration">
+  <div class="demo-banner__inner">
+    <div class="demo-banner__left">
+      <span class="demo-banner__label">🎨 Site démo</span>
+      <span class="demo-banner__text">Conçu par <strong>BENCH STUDIO</strong> · Votre restaurant mérite la même qualité</span>
     </div>
-    <nav class="demo-nav" aria-label="Navigation entre démos">
-      <span class="demo-nav-label">Voir aussi:</span>
-      <a href="atlas-immobilier.html" class="demo-nav-link">
-        <span aria-hidden="true">🏠</span> Atlas Immobilier
+    <div class="demo-banner__actions">
+      <a href="../index.html#tarifs" class="demo-banner__btn">Voir tarifs <span aria-hidden="true">→</span></a>
+      <a href="https://wa.me/212786653550?text=Bonjour%20Mohamed%2C%20j%27ai%20vu%20le%20demo%20Le%20Marrakchi%20et%20je%20souhaite%20discuter%20d%27un%20projet"
+         class="demo-banner__btn demo-banner__btn--whatsapp"
+         target="_blank" rel="noopener">
+        <span aria-hidden="true">💬</span> WhatsApp
       </a>
-      <a href="argan-royal.html" class="demo-nav-link">
-        <span aria-hidden="true">🛒</span> Argan Royal
-      </a>
-    </nav>
-    <a href="index.html" class="demo-back">
+    </div>
+    <a href="../index.html" class="demo-banner__back">
       <span aria-hidden="true">←</span>
-      <span>Retour au studio</span>
+      <span>Retour studio</span>
     </a>
   </div>
 </div>
@@ -1433,7 +1611,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     <div class="menu-grid">
 
       <article class="dish-card">
-        <div class="dish-image" data-color="orange" aria-hidden="true"></div>
+        <div class="dish-image">
+          <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Tajine royal aux pruneaux et amandes — Le Marrakchi"
+               width="600" height="450" loading="lazy" decoding="async">
+        </div>
         <div class="dish-content">
           <div class="dish-header">
             <h3 class="dish-name">Tajine Royal aux Pruneaux</h3>
@@ -1448,7 +1632,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
       </article>
 
       <article class="dish-card">
-        <div class="dish-image" data-color="gold" aria-hidden="true"></div>
+        <div class="dish-image">
+          <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Couscous traditionnel aux sept légumes — Le Marrakchi"
+               width="600" height="450" loading="lazy" decoding="async">
+        </div>
         <div class="dish-content">
           <div class="dish-header">
             <h3 class="dish-name">Couscous Sept Légumes</h3>
@@ -1462,7 +1652,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
       </article>
 
       <article class="dish-card">
-        <div class="dish-image" data-color="brown" aria-hidden="true"></div>
+        <div class="dish-image">
+          <img src="https://images.unsplash.com/photo-1593441877-9be43c4cb1c0?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1593441877-9be43c4cb1c0?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1593441877-9be43c4cb1c0?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Pastilla aux pigeonneaux croustillante — Le Marrakchi"
+               width="600" height="450" loading="lazy" decoding="async">
+        </div>
         <div class="dish-content">
           <div class="dish-header">
             <h3 class="dish-name">Pastilla aux Pigeonneaux</h3>
@@ -1476,7 +1672,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
       </article>
 
       <article class="dish-card">
-        <div class="dish-image" data-color="red" aria-hidden="true"></div>
+        <div class="dish-image">
+          <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Méchoui d'agneau rôti à l'ancienne — Le Marrakchi"
+               width="600" height="450" loading="lazy" decoding="async">
+        </div>
         <div class="dish-content">
           <div class="dish-header">
             <h3 class="dish-name">Méchoui d'Agneau</h3>
@@ -1491,7 +1693,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
       </article>
 
       <article class="dish-card">
-        <div class="dish-image" data-color="yellow" aria-hidden="true"></div>
+        <div class="dish-image">
+          <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Salade marocaine royale aux herbes fraîches — Le Marrakchi"
+               width="600" height="450" loading="lazy" decoding="async">
+        </div>
         <div class="dish-content">
           <div class="dish-header">
             <h3 class="dish-name">Salade Marocaine Royale</h3>
@@ -1505,7 +1713,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
       </article>
 
       <article class="dish-card">
-        <div class="dish-image" data-color="cream" aria-hidden="true"></div>
+        <div class="dish-image">
+          <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&q=75&fm=webp&auto=format 400w, https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=75&fm=webp&auto=format 800w"
+               sizes="(max-width:768px) 100vw, 33vw"
+               alt="Mille-feuille de pastilla sucrée à l'eau de fleur d'oranger — Le Marrakchi"
+               width="600" height="450" loading="lazy" decoding="async">
+        </div>
         <div class="dish-content">
           <div class="dish-header">
             <h3 class="dish-name">Mille-feuille de Pastilla Sucrée</h3>
@@ -1780,6 +1994,91 @@ input[type="date"]::-webkit-calendar-picker-indicator{
   </div>
 </section>
 
+<!-- ===== FAQ ===== -->
+<section class="faq-section reveal" id="faq" aria-labelledby="faq-title">
+  <div class="contact-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-header">
+      <span class="section-label">Vos questions</span>
+      <h2 id="faq-title" class="section-title">Tout ce que vous voulez <em>savoir</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Acceptez-vous les groupes ?</summary>
+        <p>Oui, nous accueillons jusqu'à <strong>30 personnes en salle privée</strong>. Réservation 48h à l'avance recommandée. Menu sur-mesure possible pour groupes de plus de 12 personnes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Avez-vous un menu enfant ?</summary>
+        <p>Oui, menu enfant à <strong>95 DH</strong> (entrée + plat + dessert + boisson). Adapté aux moins de 12 ans. Plats moins épicés disponibles à la demande.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Avez-vous des options végétariennes ?</summary>
+        <p>Tous nos couscous et tajines sont disponibles en version 100% végétarienne. Salades, briouates aux légumes, et nos desserts traditionnels sont également végétariens.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Cuisine 100% halal ?</summary>
+        <p>Oui, <strong>certifiée halal</strong>. Toutes nos viandes proviennent de boucheries certifiées du quartier. Aucun alcool dans nos préparations culinaires.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Y a-t-il un parking ?</summary>
+        <p><strong>Voiturier gratuit dès 19h</strong> tous les soirs. Parking public à 100m (Bd Anfa). Accès facile depuis l'autoroute A3 et la voie rapide.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Privatisation possible ?</summary>
+        <p>Oui, salle privée de <strong>50 places assises</strong> pour mariages, anniversaires, dîners d'affaires. Forfait dégressif selon nombre d'invités. Devis sur-mesure sous 24h.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quelles cartes acceptez-vous ?</summary>
+        <p>Visa, Mastercard, American Express, espèces et virement. Paiement mobile (Cash Plus, Wafacash) accepté pour les commandes à emporter.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Politique d'annulation ?</summary>
+        <p><strong>Annulation gratuite jusqu'à 4h avant</strong> votre réservation. Au-delà, frais d'annulation de 100 DH par couvert (sauf cas exceptionnel).</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENCH STUDIO CONVERSION CTA ===== -->
+<section class="bench-cta reveal" aria-labelledby="bench-cta-title">
+  <div class="bench-cta__content">
+    <span class="bench-cta__label">💼 BENCH STUDIO · Studio digital Casablanca</span>
+    <h2 id="bench-cta-title" class="bench-cta__title">
+      Vous dirigez un <em>restaurant</em> ?
+    </h2>
+    <p class="bench-cta__lead">
+      Voici exactement le type de site qui peut transformer votre business. Cette démo illustre les fonctionnalités du <strong>Pack Growth</strong>, conçu pour les restaurants premium et les agences immobilières.
+    </p>
+    <ul class="bench-cta__features">
+      <li>Système de réservation 24/7</li>
+      <li>Menu interactif + galerie photos</li>
+      <li>Intégration WhatsApp Business</li>
+      <li>SEO local Casablanca</li>
+      <li>Formulaires personnalisés</li>
+      <li>Lighthouse 95+ garanti</li>
+    </ul>
+    <div class="bench-cta__pricing">
+      <div class="bench-cta__price-block">
+        <span class="bench-cta__price-old">6 500 DH</span>
+        <span class="bench-cta__price-new">5 200 DH</span>
+      </div>
+      <span class="bench-cta__price-note">🎁 Early-Bird Q2 2026 · -20% jusqu'au 31 mai</span>
+    </div>
+    <div class="bench-cta__actions">
+      <a href="../index.html#tarifs" class="bench-cta__btn bench-cta__btn--primary">
+        Voir le pack complet <span aria-hidden="true">→</span>
+      </a>
+      <a href="https://wa.me/212786653550?text=Bonjour%20Mohamed%2C%20je%20veux%20un%20site%20comme%20Le%20Marrakchi%20pour%20mon%20restaurant"
+         class="bench-cta__btn bench-cta__btn--whatsapp"
+         target="_blank" rel="noopener">
+        <span aria-hidden="true">💬</span> WhatsApp direct
+      </a>
+    </div>
+    <p class="bench-cta__guarantee">
+      🛡️ Lighthouse 95+ ou remboursé · Code 100% à vous · Support 30j inclus
+    </p>
+  </div>
+</section>
+
 </main>
 
 <!-- ===== FOOTER ===== -->
@@ -1837,11 +2136,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         <p class="footer-copyright" id="footerCopyright">© 2026 Le Marrakchi · Tous droits réservés</p>
         <div class="footer-portfolio">
           <span class="portfolio-label">Découvrez aussi:</span>
-          <a href="atlas-immobilier.html" class="portfolio-link"><span aria-hidden="true">🏠</span> Atlas Immobilier</a>
+          <a href="../atlas-immobilier/index.html" class="portfolio-link"><span aria-hidden="true">🏠</span> Atlas Immobilier</a>
           <span class="portfolio-separator" aria-hidden="true">·</span>
-          <a href="argan-royal.html" class="portfolio-link"><span aria-hidden="true">🛒</span> Argan Royal</a>
+          <a href="../argan-royal/index.html" class="portfolio-link"><span aria-hidden="true">🛒</span> Argan Royal</a>
         </div>
-        <a href="index.html" class="bench-attribution-link">
+        <a href="../index.html" class="bench-attribution-link">
           <span class="bench-icon" aria-hidden="true">🎨</span>
           <span>Site conçu par</span>
           <strong class="bench-brand">BENCH STUDIO</strong>
