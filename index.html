@@ -25,8 +25,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80&fm=webp&auto=format" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image"
+      href="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format"
+      imagesrcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format 600w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
+      imagesizes="(max-width:1024px) 90vw, 560px"
+      fetchpriority="high">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"></noscript>
 
 <script type="application/ld+json">
 {
@@ -107,9 +112,10 @@
   --color-primary:#1a1a2e;
   --color-primary-light:#16213e;
   --color-primary-dark:#0f0f1e;
-  --color-accent:#ff6b35;
-  --color-accent-light:#ff8c5a;
-  --color-accent-dark:#e55525;
+  --color-accent:#c44d1d;        /* AA 4.75:1 on white */
+  --color-accent-light:#ff8c5a;  /* decorative only — never as text */
+  --color-accent-dark:#a83e15;   /* hover/deeper text */
+  --color-accent-vivid:#ff6b35;  /* decorative only — gradients, icons-on-dark */
   --color-gold:#d4af37;
   --color-gold-light:#ffd700;
   --color-white:#ffffff;
@@ -117,7 +123,7 @@
   --color-bg-alt:#f5f5f5;
   --color-text:#1a1a2e;
   --color-text-secondary:#555555;
-  --color-text-light:#888888;
+  --color-text-light:#6e6e6e;    /* AA 4.86:1 on white */
   --color-border:#e0e0e0;
   --color-border-strong:#cfcfcf;
   --color-success:#25d366;
@@ -141,7 +147,7 @@
   --shadow-md:0 4px 12px rgba(26,26,46,0.08);
   --shadow-lg:0 12px 32px rgba(26,26,46,0.12);
   --shadow-xl:0 24px 48px rgba(26,26,46,0.18);
-  --shadow-orange:0 8px 24px rgba(255,107,53,0.25);
+  --shadow-orange:0 8px 24px rgba(196,77,29,0.28);
   --transition-fast:150ms cubic-bezier(0.4,0,0.2,1);
   --transition-base:250ms cubic-bezier(0.4,0,0.2,1);
   --transition-slow:400ms cubic-bezier(0.4,0,0.2,1);
@@ -210,7 +216,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
   border:1px solid transparent;
 }
 .btn--primary{background:var(--color-accent);color:var(--color-white);box-shadow:var(--shadow-orange)}
-.btn--primary:hover{background:var(--color-accent-dark);transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,107,53,0.4)}
+.btn--primary:hover{background:var(--color-accent-dark);transform:translateY(-2px);box-shadow:0 12px 32px rgba(196,77,29,0.4)}
 .btn--secondary{background:var(--color-primary);color:var(--color-white)}
 .btn--secondary:hover{background:var(--color-primary-light);transform:translateY(-2px)}
 .btn--outline{background:transparent;color:var(--color-primary);border-color:var(--color-primary)}
@@ -393,10 +399,11 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
   overflow:hidden;
   transform:perspective(1200px) rotateY(-4deg) rotateX(2deg);
   animation:floatY 6s ease-in-out infinite;
+  will-change:transform;
 }
 @keyframes floatY{
-  0%,100%{transform:perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(0)}
-  50%{transform:perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(-12px)}
+  0%,100%{transform:perspective(1200px) rotateY(-4deg) rotateX(2deg) translate3d(0,0,0)}
+  50%{transform:perspective(1200px) rotateY(-4deg) rotateX(2deg) translate3d(0,-12px,0)}
 }
 .browser-mockup__bar{
   display:flex;align-items:center;gap:8px;
@@ -434,17 +441,12 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 .lighthouse-badge{
   position:absolute;top:24px;right:-12px;
   display:flex;align-items:center;gap:8px;
-  background:linear-gradient(135deg,#0cce6b 0%,#0a9d52 100%);
+  background:linear-gradient(135deg,#0d6e3a 0%,#08522a 100%);
   color:var(--color-white);
   padding:10px 16px;border-radius:9999px;
   font-weight:700;font-size:13px;
-  box-shadow:0 12px 32px rgba(12,206,107,0.35);
+  box-shadow:0 12px 32px rgba(13,110,58,0.35);
   z-index:2;
-  animation:pulse 3s ease-in-out infinite;
-}
-@keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.04)}
 }
 .lighthouse-badge__score{
   background:rgba(255,255,255,0.25);
@@ -921,10 +923,10 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
   transition:color var(--transition-base);
 }
 .footer__contact a:hover{color:var(--color-accent)}
-.footer__col h4{
+.footer__col h3{
   font-size:12px;font-weight:700;letter-spacing:2px;
   text-transform:uppercase;color:var(--color-accent);
-  margin-bottom:var(--space-md);
+  margin-bottom:var(--space-md);font-family:var(--font-body);
 }
 .footer__col ul{display:flex;flex-direction:column;gap:8px}
 .footer__col a{
@@ -1123,9 +1125,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
           <div class="browser-mockup__url">benchstudio.netlify.app</div>
         </div>
         <div class="browser-mockup__content">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80&fm=webp&auto=format"
-               srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80&fm=webp&auto=format 600w,
-                       https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80&fm=webp&auto=format 1200w"
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format 600w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
                sizes="(max-width:1024px) 90vw, 560px"
                alt="" width="1200" height="750"
                fetchpriority="high" decoding="async">
@@ -1193,9 +1194,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
     <div class="sectors-grid">
       <a href="/restaurants.html" class="sector-card">
         <div class="sector-card__image">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80&fm=webp&auto=format"
-               srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80&fm=webp&auto=format 400w,
-                       https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80&fm=webp&auto=format 800w"
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=75&fm=webp&auto=format 400w,
+                       https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=75&fm=webp&auto=format 800w"
                sizes="(max-width:768px) 100vw, 400px"
                alt="Intérieur de restaurant marocain — Site web BENCH STUDIO"
                width="800" height="600" loading="lazy" decoding="async">
@@ -1210,9 +1211,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
       <a href="/immobilier.html" class="sector-card sector-card--featured">
         <div class="sector-card__image">
           <span class="sector-card__badge">Plus choisi</span>
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&fm=webp&auto=format"
-               srcset="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80&fm=webp&auto=format 400w,
-                       https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&fm=webp&auto=format 800w"
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=75&fm=webp&auto=format 400w,
+                       https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=75&fm=webp&auto=format 800w"
                sizes="(max-width:768px) 100vw, 400px"
                alt="Salon d'appartement de prestige — Site web BENCH STUDIO"
                width="800" height="600" loading="lazy" decoding="async">
@@ -1226,9 +1227,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 
       <a href="/ecommerce.html" class="sector-card">
         <div class="sector-card__image">
-          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=80&fm=webp&auto=format"
-               srcset="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&q=80&fm=webp&auto=format 400w,
-                       https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=80&fm=webp&auto=format 800w"
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&q=75&fm=webp&auto=format 400w,
+                       https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=75&fm=webp&auto=format 800w"
                sizes="(max-width:768px) 100vw, 400px"
                alt="Flacon d'huile d'argan premium — E-commerce BENCH STUDIO"
                width="800" height="600" loading="lazy" decoding="async">
@@ -1258,9 +1259,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
     <div class="realisations-grid">
       <article class="realisation-card">
         <div class="realisation-card__image">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80&fm=webp&auto=format"
-               srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80&fm=webp&auto=format 600w,
-                       https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80&fm=webp&auto=format 1200w"
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75&fm=webp&auto=format 600w,
+                       https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp&auto=format 1200w"
                sizes="(max-width:768px) 100vw, 400px"
                alt="Le Marrakchi — Demo restaurant marocain"
                width="1200" height="750" loading="lazy" decoding="async">
@@ -1284,9 +1285,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 
       <article class="realisation-card">
         <div class="realisation-card__image">
-          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&fm=webp&auto=format"
-               srcset="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80&fm=webp&auto=format 600w,
-                       https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&fm=webp&auto=format 1200w"
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=75&fm=webp&auto=format 600w,
+                       https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=75&fm=webp&auto=format 1200w"
                sizes="(max-width:768px) 100vw, 400px"
                alt="Atlas Immobilier — Demo agence immobilière"
                width="1200" height="750" loading="lazy" decoding="async">
@@ -1310,9 +1311,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
 
       <article class="realisation-card">
         <div class="realisation-card__image">
-          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=80&fm=webp&auto=format"
-               srcset="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80&fm=webp&auto=format 600w,
-                       https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=80&fm=webp&auto=format 1200w"
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=75&fm=webp&auto=format"
+               srcset="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=75&fm=webp&auto=format 600w,
+                       https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=75&fm=webp&auto=format 1200w"
                sizes="(max-width:768px) 100vw, 400px"
                alt="Argan Royal — Demo e-commerce cosmétique"
                width="1200" height="750" loading="lazy" decoding="async">
@@ -1691,7 +1692,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
         </div>
       </div>
       <div class="footer__col">
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="/restaurants.html">Sites Restaurants</a></li>
           <li><a href="/immobilier.html">Sites Immobilier</a></li>
@@ -1700,7 +1701,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Studio</h4>
+        <h3>Studio</h3>
         <ul>
           <li><a href="/a-propos.html">À propos</a></li>
           <li><a href="/realisations.html">Réalisations</a></li>
@@ -1709,7 +1710,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Légal</h4>
+        <h3>Légal</h3>
         <ul>
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
