@@ -1470,6 +1470,15 @@ html body .hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* Compensate sticky overlay: .demo-banner (~50px) + .header (~76px) = ~125px */
+  padding-top: 165px;
+  padding-bottom: 90px;
+}
+@media (max-width: 768px) {
+  html body .hero {
+    padding-top: 125px;
+    padding-bottom: 64px;
+  }
 }
 html body .hero .hero-title,
 html body .hero .hero-subtitle {
