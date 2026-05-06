@@ -1928,6 +1928,66 @@ input,textarea,select{font-family:inherit}
 }
 </style>
 <link rel="stylesheet" href="/assets/css/motion-quickwins.css">
+<link rel="preload" as="image" href="./assets/hero-argan.webp" fetchpriority="high">
+<style>
+/* Hero background image override (scoped to .hero only) */
+html body .hero {
+  background-image: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.62)), url('./assets/hero-argan.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html body .hero .hero-title,
+html body .hero .hero-subtitle {
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+}
+html body .hero .hero-title em {
+  color: #D4C19C;
+  font-style: italic;
+}
+html body .hero .hero-badge {
+  color: #D4C19C;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(212,193,156,0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+html body .hero .hero-trust {
+  color: rgba(255,255,255,0.88);
+}
+html body .hero .hero-trust strong,
+html body .hero .hero-trust b {
+  color: #fff;
+}
+html body .hero .hero-stats {
+  color: #fff;
+}
+html body .hero .hero-stats strong {
+  color: #D4C19C;
+}
+html body .hero .btn-secondary {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: #fff;
+}
+html body .hero .btn-secondary:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+html body .hero .hero-visual,
+html body .hero .hero-product {
+  opacity: 0.7;
+  mix-blend-mode: screen;
+}
+html body .hero .hero-pattern {
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+}
+</style>
 </head>
 <body>
 

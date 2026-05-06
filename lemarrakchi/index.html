@@ -1462,6 +1462,51 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 </style>
 <link rel="stylesheet" href="/assets/css/motion-quickwins.css">
+<link rel="preload" as="image" href="./assets/hero-restaurant.webp" fetchpriority="high">
+<style>
+/* Hero background image override (scoped to .hero only) */
+html body .hero {
+  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('./assets/hero-restaurant.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html body .hero .hero-title,
+html body .hero .hero-subtitle {
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+}
+html body .hero .hero-title-accent {
+  color: #FFD9B0;
+}
+html body .hero .hero-arabic {
+  color: #FFD9B0;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+html body .hero .hero-trust {
+  color: rgba(255,255,255,0.88);
+}
+html body .hero .hero-trust strong,
+html body .hero .hero-trust b {
+  color: #fff;
+}
+html body .hero .btn-secondary {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: #fff;
+}
+html body .hero .btn-secondary:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+html body .hero .hero-pattern {
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+</style>
 </head>
 <body>
 
