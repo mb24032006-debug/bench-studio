@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bench-studio.netlify.app/</loc>
+    <loc>https://benchstudio.com/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/restaurants.html</loc>
+    <loc>https://benchstudio.com/restaurants.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/immobilier.html</loc>
+    <loc>https://benchstudio.com/immobilier.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/ecommerce.html</loc>
+    <loc>https://benchstudio.com/ecommerce.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/tarifs.html</loc>
+    <loc>https://benchstudio.com/tarifs.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/realisations.html</loc>
+    <loc>https://benchstudio.com/realisations.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/a-propos.html</loc>
+    <loc>https://benchstudio.com/a-propos.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/contact.html</loc>
+    <loc>https://benchstudio.com/contact.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/lemarrakchi/index.html</loc>
+    <loc>https://benchstudio.com/lemarrakchi/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/atlas-immobilier/index.html</loc>
+    <loc>https://benchstudio.com/atlas-immobilier/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/argan-royal/index.html</loc>
+    <loc>https://benchstudio.com/argan-royal/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/mentions-legales.html</loc>
+    <loc>https://benchstudio.com/mentions-legales.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/confidentialite.html</loc>
+    <loc>https://benchstudio.com/confidentialite.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://bench-studio.netlify.app/cgv.html</loc>
+    <loc>https://benchstudio.com/cgv.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

@@ -13,19 +13,25 @@
 <meta property="og:description" content="Agence immobilière premium à Casablanca. Site démo par BENCH STUDIO.">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Atlas Immobilier · Demo BENCH STUDIO">
+<meta property="og:url" content="https://benchstudio.com/atlas-immobilier/">
+<meta property="og:image" content="https://benchstudio.com/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BENCH STUDIO — premium custom-coded web agency">
+<meta name="twitter:image" content="https://benchstudio.com/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Atlas Immobilier · Demo BENCH STUDIO">
 <meta name="twitter:description" content="Site démo immobilier premium - BENCH STUDIO Casablanca">
 <meta name="theme-color" content="#2563EB">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563EB'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' text-anchor='middle' fill='%23FFFFFF'%3EAI%3C/text%3E%3C/svg%3E">
-<link rel="canonical" href="https://benchstudio.netlify.app/atlas-immobilier/">
+<link rel="canonical" href="https://benchstudio.com/atlas-immobilier/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   "name": "Atlas Immobilier",
   "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=75&fm=webp",
-  "url": "https://benchstudio.netlify.app/atlas-immobilier/",
+  "url": "https://benchstudio.com/atlas-immobilier/",
   "description": "Agence immobilière premium à Casablanca depuis 2008. 1247 biens d'exception : villas, penthouses, riads.",
   "address": {
     "@type": "PostalAddress",
@@ -1603,6 +1609,62 @@ ul{list-style:none}
   .reveal{opacity:1;transform:none}
 }
 </style>
+<link rel="stylesheet" href="/assets/css/motion-quickwins.css">
+<link rel="preload" as="image" href="./assets/hero-villa.webp" fetchpriority="high">
+<style>
+/* Hero background image override (scoped to .hero only) */
+html body .hero {
+  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('./assets/hero-villa.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html body .hero .hero-title,
+html body .hero .hero-subtitle {
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+}
+html body .hero .hero-title-accent {
+  color: #C9B687;
+}
+html body .hero .hero-eyebrow {
+  color: #C9B687;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(201,182,135,0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+html body .hero .hero-trust {
+  color: rgba(255,255,255,0.88);
+}
+html body .hero .hero-trust strong,
+html body .hero .hero-trust b {
+  color: #fff;
+}
+html body .hero .hero-search {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+}
+html body .hero .btn-secondary {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: #fff;
+}
+html body .hero .btn-secondary:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+html body .hero .hero-pattern,
+html body .hero .hero-grid {
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+}
+</style>
 </head>
 <body>
 
@@ -2790,5 +2852,8 @@ ul{list-style:none}
 })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="/assets/js/motion-quickwins.js" defer></script>
 </body>
 </html>

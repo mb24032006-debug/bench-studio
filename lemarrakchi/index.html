@@ -13,19 +13,25 @@
 <meta property="og:description" content="Restaurant marocain premium à Casablanca. Tradition culinaire depuis 1985. Site démo par BENCH STUDIO.">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Le Marrakchi · Demo BENCH STUDIO">
+<meta property="og:url" content="https://benchstudio.com/lemarrakchi/">
+<meta property="og:image" content="https://benchstudio.com/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BENCH STUDIO — premium custom-coded web agency">
+<meta name="twitter:image" content="https://benchstudio.com/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Le Marrakchi · Demo BENCH STUDIO">
 <meta name="twitter:description" content="Site démo restaurant premium - BENCH STUDIO Casablanca">
 <meta name="theme-color" content="#C2410C">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23C2410C'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' text-anchor='middle' fill='%23FFFBF5'%3ELM%3C/text%3E%3C/svg%3E">
-<link rel="canonical" href="https://benchstudio.netlify.app/lemarrakchi/">
+<link rel="canonical" href="https://benchstudio.com/lemarrakchi/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Le Marrakchi",
   "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=75&fm=webp",
-  "url": "https://benchstudio.netlify.app/lemarrakchi/",
+  "url": "https://benchstudio.com/lemarrakchi/",
   "description": "Restaurant marocain premium à Casablanca depuis 1985. Tajines, couscous, pastilla.",
   "servesCuisine": "Marocaine",
   "priceRange": "300 DH - 800 DH",
@@ -1455,6 +1461,52 @@ input[type="date"]::-webkit-calendar-picker-indicator{
   .reveal{opacity:1;transform:none}
 }
 </style>
+<link rel="stylesheet" href="/assets/css/motion-quickwins.css">
+<link rel="preload" as="image" href="./assets/hero-restaurant.webp" fetchpriority="high">
+<style>
+/* Hero background image override (scoped to .hero only) */
+html body .hero {
+  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('./assets/hero-restaurant.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html body .hero .hero-title,
+html body .hero .hero-subtitle {
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+}
+html body .hero .hero-title-accent {
+  color: #FFD9B0;
+}
+html body .hero .hero-arabic {
+  color: #FFD9B0;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+html body .hero .hero-trust {
+  color: rgba(255,255,255,0.88);
+}
+html body .hero .hero-trust strong,
+html body .hero .hero-trust b {
+  color: #fff;
+}
+html body .hero .btn-secondary {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: #fff;
+}
+html body .hero .btn-secondary:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+html body .hero .hero-pattern {
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+</style>
 </head>
 <body>
 
@@ -2404,5 +2456,8 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="/assets/js/motion-quickwins.js" defer></script>
 </body>
 </html>
