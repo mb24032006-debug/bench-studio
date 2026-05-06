@@ -1,0 +1,191 @@
+/* ==========================================================================
+   BENCH STUDIO — Motion Quick Wins (shared across 3 demos)
+   - Cubic-bezier easing matched to Apple/Stripe/Linear feel.
+   - Pure CSS for hero entrance + body fade (resilient: works without JS).
+   - GPU-accelerated only (transform/opacity).
+   - prefers-reduced-motion guards on every animation.
+   ========================================================================== */
+
+:root {
+  --bs-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --bs-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --bs-dur-short: 250ms;
+  --bs-dur-base: 350ms;
+  --bs-dur-long: 700ms;
+  --bs-card-shadow-hover: 0 24px 48px rgba(0, 0, 0, 0.14);
+  --bs-cta-shadow-hover: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+/* ==========================================================================
+   1. BODY FADE-IN ON PAGE LOAD (pure CSS)
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    animation: bs-page-in 500ms var(--bs-ease-out) backwards;
+  }
+  @keyframes bs-page-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* ==========================================================================
+   2. HERO STAGGER ENTRANCE (pure CSS, no JS required)
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-arabic,
+  .hero-eyebrow,
+  .hero-badge,
+  .hero-title,
+  .hero-subtitle,
+  .hero-actions,
+  .hero-search,
+  .hero-trust,
+  .hero-visual,
+  .hero-stats {
+    animation: bs-fade-up 800ms var(--bs-ease-out) backwards;
+    will-change: opacity, transform;
+  }
+
+  .hero-arabic        { animation-delay:  80ms; }
+  .hero-eyebrow,
+  .hero-badge         { animation-delay: 100ms; }
+  .hero-title         { animation-delay: 220ms; }
+  .hero-subtitle      { animation-delay: 360ms; }
+  .hero-visual        { animation-delay: 320ms; }
+  .hero-actions,
+  .hero-search        { animation-delay: 500ms; }
+  .hero-trust         { animation-delay: 640ms; }
+  .hero-stats         { animation-delay: 720ms; }
+
+  @keyframes bs-fade-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* ==========================================================================
+   3. REVEAL-ON-SCROLL (opt-in via [data-reveal])
+   ========================================================================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--bs-dur-long) var(--bs-ease-out),
+    transform var(--bs-dur-long) var(--bs-ease-out);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Stagger reveal children (parent has [data-reveal-stagger]) */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal-stagger] > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 600ms var(--bs-ease-out),
+      transform 600ms var(--bs-ease-out);
+  }
+  [data-reveal-stagger].is-visible > * {
+    opacity: 1;
+    transform: none;
+  }
+  [data-reveal-stagger].is-visible > *:nth-child(1) { transition-delay:   0ms; }
+  [data-reveal-stagger].is-visible > *:nth-child(2) { transition-delay:  80ms; }
+  [data-reveal-stagger].is-visible > *:nth-child(3) { transition-delay: 160ms; }
+  [data-reveal-stagger].is-visible > *:nth-child(4) { transition-delay: 240ms; }
+  [data-reveal-stagger].is-visible > *:nth-child(5) { transition-delay: 320ms; }
+  [data-reveal-stagger].is-visible > *:nth-child(6) { transition-delay: 400ms; }
+  [data-reveal-stagger].is-visible > *:nth-child(7) { transition-delay: 480ms; }
+  [data-reveal-stagger].is-visible > *:nth-child(8) { transition-delay: 560ms; }
+}
+
+/* ==========================================================================
+   4. CTA BUTTONS PREMIUM HOVER (additive — layers on existing styles)
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .btn-primary,
+  .btn-secondary {
+    transition:
+      transform var(--bs-dur-short) var(--bs-ease-out),
+      box-shadow var(--bs-dur-short) ease-out,
+      background-color 200ms ease-out,
+      color 200ms ease-out,
+      border-color 200ms ease-out;
+    will-change: transform;
+  }
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--bs-cta-shadow-hover);
+  }
+  .btn-primary:active,
+  .btn-secondary:active {
+    transform: translateY(0);
+    transition-duration: 80ms;
+  }
+}
+
+/* ==========================================================================
+   5. CARD HOVER LIFT + IMAGE ZOOM (.card-link + opt-in [data-card])
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .card-link,
+  [data-card] {
+    transition:
+      transform var(--bs-dur-base) var(--bs-ease-out),
+      box-shadow var(--bs-dur-base) ease-out;
+    will-change: transform;
+  }
+  .card-link:hover,
+  [data-card]:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--bs-card-shadow-hover);
+  }
+  [data-card] img,
+  [data-card] picture {
+    transition: transform 700ms var(--bs-ease-out);
+    will-change: transform;
+  }
+  [data-card]:hover img,
+  [data-card]:hover picture {
+    transform: scale(1.05);
+  }
+  /* Crop image zoom when [data-card-clip] is set on parent */
+  [data-card][data-card-clip] {
+    overflow: hidden;
+  }
+}
+
+/* ==========================================================================
+   6. LENIS SMOOTH SCROLL (required helper rules)
+   Fallback to native scroll-behavior:smooth if Lenis fails to load.
+   ========================================================================== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+html.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+html.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+html.lenis.lenis-stopped {
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.lenis) {
+    scroll-behavior: smooth;
+  }
+}
