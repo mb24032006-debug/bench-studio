@@ -4,4 +4,4 @@ Allow: /
 Disallow: /index-backup-WORKING.html.html
 Disallow: /index-backup-FINAL.html.html
 
-Sitemap: https://bench-studio.netlify.app/sitemap.xml
+Sitemap: https://benchstudio.com/sitemap.xml
